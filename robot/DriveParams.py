@@ -12,7 +12,7 @@ class DriveParams:
 		print "setMotorParams(" + str(motorIndex) + ")"
 		mp = MotorParams(motorIndex, direction, speed)
 		found=False
-		for index in enumerate(self.motorParams):
+		for index,value in enumerate(self.motorParams):
 			if(self.motorParams[index].motorIndex==motorIndex):
 				found=True
 				self.motorParams[index] = mp

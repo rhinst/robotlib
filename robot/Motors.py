@@ -68,6 +68,7 @@ class Motors:
 			#smbus IO errors are common. try up to 3 times
 			try:
 				self.bus.write_i2c_block_data(REMOTE_DEVICE_ADDRESS, action, args)
+				time.sleep(0.01)
 			except IOError:
 				# wait and try again
 				print "I2C bus error. Retrying..."
