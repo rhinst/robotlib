@@ -1,6 +1,6 @@
 import cwiid
 import time
-from util.Observer import Observable
+from robot.Observer import Observable
 
 class Wiimote(Observable):
 

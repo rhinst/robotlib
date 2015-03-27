@@ -56,10 +56,12 @@ SPEED_FULL_ALL = 255
 
 class Motors:
 	
+	config = None
 	bus = None
 	driving=False
 
-	def __init__(self):
+	def __init__(self, config):
+		self.config = config
 		self.bus = smbus.SMBus(1)
 
 	def _write_bus(self, action, args):

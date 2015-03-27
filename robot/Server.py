@@ -1,5 +1,5 @@
 from SocketServer import TCPServer,StreamRequestHandler
-from util.Observer import Observable
+from robot.Observer import Observable
 from threading import Thread
 
 class RobotServer(TCPServer,Observable, Thread):

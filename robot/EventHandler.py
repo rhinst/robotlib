@@ -1,5 +1,5 @@
 import re
-from util.Observer import Observer
+from robot.Observer import Observer
 from robot.DriveParams import DriveParams
 from robot import MotorParams
 

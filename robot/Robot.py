@@ -5,6 +5,7 @@ from robot.EventHandler import EventHandler
 from robot.Wiimote import Wiimote
 from robot.Server import RobotServer
 from robot.Motors import Motors
+from robot.Servos import Servos
 
 class Robot:
 
@@ -17,6 +18,7 @@ class Robot:
 		self.config = config
 		self.eh = EventHandler(config, self)
 		self.initMotors()
+		self.initServos()
 		self.initServer()
 
 
@@ -27,7 +29,11 @@ class Robot:
 		self.server.start()
 
 	def initMotors(self):
-		self.motors = Motors()		
+		self.motors = Motors(self.config)
+
+	def initServos(self):
+		self.servos = Servos(self.config)
+		self.servos.reset()
 	
 
 	def start(self):
